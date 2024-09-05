@@ -522,11 +522,6 @@ def binomial_coeffs(n):
     return coeffs
 
 
-def compute_bezier_point():
-    point = [0,0]
-    return point
-
-
 def draw_bezier_line(debug_image, ctrl_points):
     n = len(ctrl_points) - 1
     coeffs = binomial_coeffs(n)
