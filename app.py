@@ -544,6 +544,10 @@ def draw_bezier_line(debug_image, ctrl_points):
         # Dibujar el punto en la imagen
         cv.circle(debug_image, bezier_point, 5, (0, 255, 0), -1)
 
+    # Connect all Bezier points
+    for i in range(len(ctrl_points) - 1):
+        cv.line(debug_image, ctrl_points[i], ctrl_points[i+1], (0, 255, 0), 2)
+
     return debug_image
 
 def get_bezier_ctrl_points(image, brect, handedness, hand_sign_text,
